@@ -33,24 +33,17 @@ h1, h2, h3, h4, h5, p, span {
     border: 2px dashed #22d3ee;
 }
 
-/* Force visibility of drag & drop text */
-.stFileUploader label {
-    color: #020617 !important;
-}
-
-.stFileUploader svg {
-    fill: #020617 !important;
-}
-
-/* Cloud upload icon */
-.stFileUploader svg path {
-    fill: #020617 !important;
-}
-
-/* "Drag and drop file here" text */
+/* Drag & drop main text */
 .stFileUploader label div span {
-    color: #020617 !important;
-    font-weight: 700;
+    color: #000000 !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Subtext */
+.stFileUploader small {
+    color: #7dd3fc !important;
+    font-size: 13px;
 }
 
 /* Browse button */
@@ -131,24 +124,43 @@ h1, h2, h3, h4, h5, p, span {
     background: linear-gradient(135deg, #1d4ed8, #1e40af);
     transform: scale(1.03);
 }
-/* Header icons (Share, Star, GitHub) */
-header [data-testid="stToolbar"] {
-    color: #e5e7eb !important;
+/* ================= FORCE FILE UPLOADER TEXT VISIBILITY ================= */
+
+/* Main drag-drop container */
+div[data-testid="stFileUploader"] {
+    background-color: #f8fafc !important;
 }
 
-header [data-testid="stToolbar"] svg {
-    fill: #e5e7eb !important;
-    stroke: #e5e7eb !important;
+/* Drag & drop text */
+div[data-testid="stFileUploader"] * {
+    color: #020617 !important;
 }
 
-/* Hover visibility */
-header [data-testid="stToolbar"] button:hover svg {
-    fill: #22d3ee !important;
+/* Cloud upload icon */
+div[data-testid="stFileUploader"] svg {
+    fill: #020617 !important;
+    stroke: #020617 !important;
+}
+
+/* "Drag and drop file here" text (deep override) */
+div[data-testid="stFileUploader"] span {
+    color: #020617 !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+}
+
+/* Limit text */
+div[data-testid="stFileUploader"] small {
+    color: #334155 !important;
+}
+
+/* Browse files button text */
+div[data-testid="stFileUploader"] button {
+    color: #020617 !important;
 }
 
 </style>
 """, unsafe_allow_html=True)
-
 
 # ------------------ HEADER ------------------
 st.title("📄 ATS Resume Checker")
@@ -165,9 +177,10 @@ client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # ------------------ FILE UPLOAD ------------------
 uploaded_file = st.file_uploader(
-    "📤 Upload your resume (PDF only) — drag & drop supported 🚀",
+    "📄 Drop your resume here or click Browse ⬆️ (PDF only)",
     type=["pdf"]
 )
+
 
 
 # ------------------ TABS ------------------
