@@ -124,40 +124,7 @@ h1, h2, h3, h4, h5, p, span {
     background: linear-gradient(135deg, #1d4ed8, #1e40af);
     transform: scale(1.03);
 }
-/* ================= FORCE FILE UPLOADER TEXT VISIBILITY ================= */
 
-/* Main drag-drop container */
-div[data-testid="stFileUploader"] {
-    background-color: #020c17 !important;
-}
-
-/* Drag & drop text */
-div[data-testid="stFileUploader"] * {
-    color: #020c17 !important;
-}
-
-/* Cloud upload icon */
-div[data-testid="stFileUploader"] svg {
-    fill: #020617 !important;
-    stroke:#020c17 !important;
-}
-
-/* "Drag and drop file here" text (deep override) */
-div[data-testid="stFileUploader"] span {
-    color: #020c17 !important;
-    font-weight: 700 !important;
-    font-size: 16px !important;
-}
-
-/* Limit text */
-div[data-testid="stFileUploader"] small {
-    color: #020c17 !important;
-}
-
-/* Browse files button text */
-div[data-testid="stFileUploader"] button {
-    color: #020c17 !important;
-}
 
 </style>
 """, unsafe_allow_html=True)
