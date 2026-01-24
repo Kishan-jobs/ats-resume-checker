@@ -128,35 +128,35 @@ h1, h2, h3, h4, h5, p, span {
 
 /* Main drag-drop container */
 div[data-testid="stFileUploader"] {
-    background-color: #f8fafc !important;
+    background-color: #020c17 !important;
 }
 
 /* Drag & drop text */
 div[data-testid="stFileUploader"] * {
-    color: #020617 !important;
+    color: #020c17 !important;
 }
 
 /* Cloud upload icon */
 div[data-testid="stFileUploader"] svg {
     fill: #020617 !important;
-    stroke: #020617 !important;
+    stroke:#020c17 !important;
 }
 
 /* "Drag and drop file here" text (deep override) */
 div[data-testid="stFileUploader"] span {
-    color: #020617 !important;
+    color: #020c17 !important;
     font-weight: 700 !important;
     font-size: 16px !important;
 }
 
 /* Limit text */
 div[data-testid="stFileUploader"] small {
-    color: #334155 !important;
+    color: #020c17 !important;
 }
 
 /* Browse files button text */
 div[data-testid="stFileUploader"] button {
-    color: #020617 !important;
+    color: #020c17 !important;
 }
 
 </style>
@@ -177,7 +177,7 @@ client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # ------------------ FILE UPLOAD ------------------
 uploaded_file = st.file_uploader(
-    "📄 Drop your resume here or click Browse ⬆️ (PDF only)",
+    "📄 Drop your resume here or click Browse  (PDF only)",
     type=["pdf"]
 )
 
