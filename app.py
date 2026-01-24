@@ -33,17 +33,24 @@ h1, h2, h3, h4, h5, p, span {
     border: 2px dashed #22d3ee;
 }
 
-/* Drag & drop main text */
-.stFileUploader label div span {
-    color: #000000 !important;
-    font-size: 16px;
-    font-weight: 600;
+/* Force visibility of drag & drop text */
+.stFileUploader label {
+    color: #020617 !important;
 }
 
-/* Subtext */
-.stFileUploader small {
-    color: #7dd3fc !important;
-    font-size: 13px;
+.stFileUploader svg {
+    fill: #020617 !important;
+}
+
+/* Cloud upload icon */
+.stFileUploader svg path {
+    fill: #020617 !important;
+}
+
+/* "Drag and drop file here" text */
+.stFileUploader label div span {
+    color: #020617 !important;
+    font-weight: 700;
 }
 
 /* Browse button */
@@ -124,6 +131,21 @@ h1, h2, h3, h4, h5, p, span {
     background: linear-gradient(135deg, #1d4ed8, #1e40af);
     transform: scale(1.03);
 }
+/* Header icons (Share, Star, GitHub) */
+header [data-testid="stToolbar"] {
+    color: #e5e7eb !important;
+}
+
+header [data-testid="stToolbar"] svg {
+    fill: #e5e7eb !important;
+    stroke: #e5e7eb !important;
+}
+
+/* Hover visibility */
+header [data-testid="stToolbar"] button:hover svg {
+    fill: #22d3ee !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
