@@ -5,8 +5,8 @@ import fitz  # PyMuPDF
 import json
 import re
 import time
-from google import genai
-from google.genai import types
+import google.generativeai as genai
+
 
 
 
@@ -140,7 +140,9 @@ if "GOOGLE_API_KEY" not in st.secrets:
     st.error("❌ GOOGLE_API_KEY missing in Streamlit secrets")
     st.stop()
 
-client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+model = genai.GenerativeModel("gemini-2.5-flash")
+
 
 
 # ------------------ FILE UPLOAD ------------------
