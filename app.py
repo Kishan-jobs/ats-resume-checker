@@ -5,7 +5,8 @@ import fitz  # PyMuPDF
 import json
 import re
 import time
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 
 
