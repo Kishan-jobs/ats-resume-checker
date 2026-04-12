@@ -199,19 +199,17 @@ Return ONLY valid JSON:
     response = None
     for attempt in range(5):
         try:
-            response = client.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=prompt,
-                config=types.GenerateContentConfig(
+            response = model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
                     temperature=0,
                     top_k=1,
                     top_p=1,
-                    response_mime_type="application/json"
                 )
             )
             data = json.loads(response.text)
             break
-        except (ServerError, ClientError, json.JSONDecodeError):
+        except Exception:  # FIXED: replaced undefined ServerError, ClientError with Exception
             time.sleep(min(2 ** attempt * 5, 60))
 
     if not response:
